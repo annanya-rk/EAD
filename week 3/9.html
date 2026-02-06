@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Responsive Layout</title>
+    <style>
+        body {
+            font-family: Arial;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .box {
+            flex: 1;
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+
+        .box1 { background: #3498db; }
+        .box2 { background: #2ecc71; }
+        .box3 { background: #e74c3c; }
+
+        /* Mobile Layout */
+        @media (max-width: 600px) {
+            .container {
+                flex-direction: column;
+            }
+        }
+
+        /* Desktop Layout */
+        @media (min-width: 601px) {
+            .container {
+                flex-direction: row;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<h2 style="text-align:center;">Responsive Layout Example</h2>
+
+<div class="container">
+    <div class="box box1">Section 1</div>
+    <div class="box box2">Section 2</div>
+    <div class="box box3">Section 3</div>
+</div>
+
+</body>
+</html>

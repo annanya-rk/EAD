@@ -1,0 +1,19 @@
+/* External CSS Example */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Optional smooth spacing */
+.container {
+    margin-top: 50px;
+}
+
+/* Improve button appearance slightly */
+button {
+    border-radius: 4px;
+}

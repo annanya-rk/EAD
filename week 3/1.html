@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Basics & Selectors</title>
+
+    <!-- Internal CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+
+        /* Container */
+        .container {
+            width: 60%;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Element Selector */
+        h1 {
+            color: blue;
+        }
+
+        /* Class Selector */
+        .paraStyle {
+            background-color: lightyellow;
+            padding: 10px;
+            margin: 15px 0;
+        }
+
+        /* ID Selector */
+        #btnStyle {
+            font-size: 18px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Button hover */
+        #btnStyle:hover {
+            background-color: darkgreen;
+        }
+    </style>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Welcome to CSS Basics</h1>
+
+    <p class="paraStyle">
+        This paragraph is styled using a class selector.
+    </p>
+
+    <!-- Inline CSS -->
+    <button id="btnStyle" style="color: white; background-color: green;">
+        Click Me
+    </button>
+
+</div>
+
+</body>
+</html>
