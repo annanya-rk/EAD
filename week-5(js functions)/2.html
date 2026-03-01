@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Function Expression Programs</title>
+</head>
+<body>
+<h2>Function Expression Results</h2>
+<script>
+var reverseString = function(str) {
+    let reversed = "";
+    for (let i = str.length - 1; i >= 0; i--) {
+        reversed += str[i];
+    }
+    return reversed;
+};
+var countVowels = function(str) {
+    let count = 0;
+    let vowels = "aeiouAEIOU";
+
+    for (let i = 0; i < str.length; i++) {
+        if (vowels.includes(str[i])) {
+            count++;
+        }
+    }
+    return count;
+};
+var findLongestWord = function(sentence) {
+    let words = sentence.split(" ");
+    let longest = "";
+    for (let i = 0; i < words.length; i++) {
+        if (words[i].length > longest.length) {
+            longest = words[i];
+        }
+    }
+    return longest;
+};
+document.write("Reverse of 'hello': " + reverseString("hello") + "<br><br>");
+document.write("Vowel count in 'education': " + countVowels("education") + "<br><br>");
+document.write("Longest word: " + findLongestWord("I love learning JavaScript programming") + "<br>");
+</script>
+</body>
+</html>

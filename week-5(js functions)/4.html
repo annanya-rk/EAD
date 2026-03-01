@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Default Parameter Programs</title>
+</head>
+<body>
+<h2>Default Parameter Results</h2>
+<script>
+function simpleInterest(principal, time, rate = 5) {
+    return (principal * rate * time) / 100;
+}
+function power(base, exponent = 2) {
+    return Math.pow(base, exponent);
+}
+function calculateSalary(basic, hra = 2000, ta = 1000, bonus = 500) {
+    let gross = basic + hra + ta + bonus;
+    let tax = gross * 0.1;
+    let net = gross - tax;
+    return net;
+}
+document.write("Simple Interest (10000, 2 years): " + simpleInterest(10000, 2) + "<br><br>");
+document.write("Power (5 default square): " + power(5) + "<br>");
+document.write("Power (5,3): " + power(5,3) + "<br><br>");
+document.write("Net Salary (Basic 20000): " + calculateSalary(20000) + "<br>");
+</script>
+</body>
+</html>

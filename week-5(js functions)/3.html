@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Arrow Function Programs</title>
+</head>
+<body>
+<h2>Arrow Function Results</h2>
+<script>
+const average = (arr) => {
+    let sum = arr.reduce((total, num) => total + num, 0);
+    return sum / arr.length;
+};
+const filterPrimes = (arr) => {
+    return arr.filter(num => {
+        if (num < 2) return false;
+        for (let i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i === 0) return false;
+        }
+        return true;
+    });
+};
+const secondLargest = (arr) => {
+    let sorted = [...arr].sort((a, b) => b - a);
+    return sorted[1];
+};
+let numbers = [10, 15, 3, 7, 20, 11];
+document.write("Array: " + numbers + "<br><br>");
+document.write("Average: " + average(numbers) + "<br><br>");
+document.write("Prime Numbers: " + filterPrimes(numbers) + "<br><br>");
+document.write("Second Largest: " + secondLargest(numbers) + "<br>");
+</script>
+</body>
+</html>

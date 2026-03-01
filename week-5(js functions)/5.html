@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Higher Order Functions</title>
+</head>
+<body>
+<h2>Higher-Order Function Results</h2>
+<script>
+function createDiscount(discountPercent) {
+    return function(price) {
+        return price - (price * discountPercent / 100);
+    };
+}
+let tenPercentDiscount = createDiscount(10);
+document.write("Price after 10% discount on 1000: " + tenPercentDiscount(1000) + "<br><br>");
+function createTaxCalculator(taxRate) {
+    return function(amount) {
+        return amount + (amount * taxRate / 100);
+    };
+}
+let gstCalculator = createTaxCalculator(18);
+document.write("Amount after 18% tax on 2000: " + gstCalculator(2000) + "<br><br>");
+function loginTracker() {
+    let attempts = 0;
+    return function() {
+        attempts++;
+        return "Login attempts: " + attempts;
+    };
+}
+let trackLogin = loginTracker();
+document.write(trackLogin() + "<br>");
+document.write(trackLogin() + "<br>");
+document.write(trackLogin() + "<br>");
+</script>
+</body>
+</html>

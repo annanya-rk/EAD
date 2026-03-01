@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Programs</title>
+</head>
+<body>
+<h2>Number Program Results</h2>
+<script>
+function factorial(n) {
+    let result = 1;
+    for (let i = 1; i <= n; i++) {
+        result = result * i;
+    }
+    return result;
+}
+function isPalindrome(num) {
+    let original = num;
+    let reverse = 0;
+    while (num > 0) {
+        let digit = num % 10;
+        reverse = reverse * 10 + digit;
+        num = Math.floor(num / 10);
+    }
+    return original === reverse;
+}
+function isArmstrong(num) {
+    let original = num;
+    let sum = 0;
+    let digits = original.toString().length;
+    while (num > 0) {
+        let digit = num % 10;
+        sum += Math.pow(digit, digits);
+        num = Math.floor(num / 10);
+    }
+    return original === sum;
+}
+document.write("Factorial of 5: " + factorial(5) + "<br><br>");
+document.write("Is 121 Palindrome? " + isPalindrome(121) + "<br>");
+document.write("Is 123 Palindrome? " + isPalindrome(123) + "<br><br>");
+document.write("Is 153 Armstrong? " + isArmstrong(153) + "<br>");
+document.write("Is 123 Armstrong? " + isArmstrong(123) + "<br>");
+</script>
+</body>
+</html>

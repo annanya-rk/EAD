@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Callback Function Programs</title>
+</head>
+<body>
+<h2>Callback Function Results</h2>
+<script>
+function calculate(a, b, operation) {
+    return operation(a, b);
+}
+function add(x, y) {
+    return x + y;
+}
+function multiply(x, y) {
+    return x * y;
+}
+document.write("Addition: " + calculate(10, 5, add) + "<br>");
+document.write("Multiplication: " + calculate(10, 5, multiply) + "<br><br>");
+function processArray(arr, callback) {
+    let result = [];
+    for (let i = 0; i < arr.length; i++) {
+        result.push(callback(arr[i]));
+    }
+    return result;
+}
+function square(num) {
+    return num * num;
+}
+let numbers = [1, 2, 3, 4];
+document.write("Squared Array: " + processArray(numbers, square) + "<br><br>");
+function authenticate(username, password, successCallback, failureCallback) {
+    if (username === "admin" && password === "1234") {
+        successCallback();
+    } else {
+        failureCallback();
+    }
+}
+function loginSuccess() {
+    document.write("Login Successful!<br>");
+}
+function loginFailure() {
+    document.write("Login Failed!<br>");
+}
+authenticate("admin", "1234", loginSuccess, loginFailure);
+authenticate("user", "0000", loginSuccess, loginFailure);
+</script>
+</body>
+</html>

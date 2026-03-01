@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Constructor Function Programs</title>
+</head>
+<body>
+<h2>Constructor Function Results</h2>
+<script>
+function Student(name, age, course) {
+    this.name = name;
+    this.age = age;
+    this.course = course;
+    this.display = function() {
+        return "Name: " + this.name + ", Age: " + this.age + ", Course: " + this.course;
+    };
+}
+let student1 = new Student("Samhitha", 20, "B.Tech");
+let student2 = new Student("Rahul", 21, "BCA");
+document.write(student1.display() + "<br>");
+document.write(student2.display() + "<br><br>");
+function BankAccount(accountHolder, balance) {
+    this.accountHolder = accountHolder;
+    this.balance = balance;
+    this.deposit = function(amount) {
+        this.balance += amount;
+        return "Updated Balance: " + this.balance;
+    };
+}
+let account1 = new BankAccount("Samhitha", 5000);
+document.write(account1.deposit(2000) + "<br><br>");
+function Employee(name, basicSalary) {
+    this.name = name;
+    this.basicSalary = basicSalary;
+    this.calculateNetSalary = function() {
+        let hra = 2000;
+        let ta = 1000;
+        let gross = this.basicSalary + hra + ta;
+        let tax = 0;
+        if (gross > 30000) {
+            tax = gross * 0.1;
+        } else {
+            tax = gross * 0.05;
+        }
+        return "Employee: " + this.name + ", Net Salary: " + (gross - tax);
+    };
+}
+let emp1 = new Employee("Samhitha", 28000);
+let emp2 = new Employee("Ravi", 35000);
+document.write(emp1.calculateNetSalary() + "<br>");
+document.write(emp2.calculateNetSalary() + "<br>");
+</script>
+</body>
+</html>
