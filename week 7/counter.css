@@ -1,0 +1,17 @@
+body {
+  font-family: Arial;
+  text-align: center;
+  margin-top: 50px;
+}
+div{
+    border: 1px solid #c05a5a;
+    padding:20px;
+    display: inline-block;
+    border-radius: 8px;
+}
+button{
+    color:aqua;
+    margin: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+}
